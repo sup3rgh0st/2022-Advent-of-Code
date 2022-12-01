@@ -14,5 +14,9 @@ with open('01_data.txt', 'r') as f:
             currentCalories = 0
         else: # Continue Elf
             currentCalories += int(line)
+    
+    # Last elf isn't terminated with a new line. Either sanitize the data by adding one or have this final check.
+    if currentCalories > highestCalories:
+        highestCalories = currentCalories
 
 print(highestCalories)
